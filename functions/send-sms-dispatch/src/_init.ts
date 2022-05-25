@@ -1,39 +1,23 @@
-import type { EventTriggers } from "./types"
+import type { Args } from "./types"
 import { run } from "./index"
-
-type Context = {
-  baggage: {
-    WorkspaceEvent: {
-      Event: EventTriggers
-    }
-    Actions: {
-      [clientID: string]: any
-    }
-  }
-}
 
 /**
  * Init initializes the context for running the function.  This calls
  * start() when
  */
 async function init() {
-  let context: Context | undefined
+  let context: Args | undefined
 
   // We pass the event in as an argument to the node function.  Running
   // npx ts-node "./foo.bar" means we have 2 arguments prior to the event.
   // We'll also be adding stdin and lambda compatibility soon.
   context = JSON.parse(process.argv[2])
 
-  console.log("context", process.argv[2])
-
   if (!context) {
     throw new Error("unable to parse context")
   }
 
-  const result = await run({
-    // event: context.baggage.WorkspaceEvent.Event,
-    // actions: context.baggage.Actions,
-  })
+  const result = await run(context)
   return result
 }
 
@@ -45,6 +29,9 @@ init()
       return
     }
     console.log(JSON.stringify(result))
+    if (result.status >= 400) {
+      process.exit(1)
+    }
   })
   .catch((e) => {
     // TODO: Log error and stack trace.
