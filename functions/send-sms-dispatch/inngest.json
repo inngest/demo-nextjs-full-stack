@@ -1,0 +1,23 @@
+{
+  "name": "Send SMS Dispatch",
+  "id": "prompt-deer-ede40d",
+  "triggers": [
+    {
+      "event": "worker.dispatched",
+      "definition": {
+        "format": "cue",
+        "synced": false,
+        "def": "file://./events/worker-dispatched.cue"
+      }
+    }
+  ],
+  "steps": {
+    "Send SMS Dispatch": {
+      "path": "",
+      "name": "Send SMS Dispatch",
+      "runtime": {
+        "type": "docker"
+      }
+    }
+  }
+}

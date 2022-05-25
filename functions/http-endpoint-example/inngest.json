@@ -1,0 +1,23 @@
+{
+  "name": "Send Welcome Email",
+  "id": "fast-hornet-a198f9",
+  "triggers": [
+    {
+      "event": "user.signup",
+      "definition": {
+        "format": "cue",
+        "synced": false,
+        "def": "file://./events/user-signup.cue"
+      }
+    }
+  ],
+  "steps": {
+    "Send Welcome Email": {
+      "name": "Send Welcome Email",
+      "runtime": {
+        "type": "http",
+        "url": "http://localhost:3000/api/sendWelcomeEmail"
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 2rem;
+}
+
+.notification {
+  padding: 0.5em 1em;
+  background-color: #ddd;
+  border-radius: 4px;
+}
+.success {
+  background-color: rgb(154, 222, 173);
+}
+.failure {
+  background-color: rgb(255, 99, 132);
+}
+
+.row,
+.rowHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin: 0.5em 0;
+}
+.rowHeader {
+  font-weight: bold;
+}
+
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.button {
+  background-color: #2583ee;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  font-size: 1.05em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.textarea {
+  margin: 1em 0;
+  padding: 0.6em;
+  width: 100%;
+  height: 6em;
+  font-family: sans-serif;
+}
