@@ -6,17 +6,18 @@ import { run } from "./index"
  * start() when
  */
 async function init() {
-  let context: Args | undefined
+  // let context: Args | undefined
 
   // We pass the event in as an argument to the node function.  Running
   // npx ts-node "./foo.bar" means we have 2 arguments prior to the event.
   // We'll also be adding stdin and lambda compatibility soon.
-  context = JSON.parse(process.argv[2])
+  let context = JSON.parse(process.argv[2])
 
   if (!context) {
     throw new Error("unable to parse context")
   }
 
+  // v1
   const result = await run(context)
   return result
 }

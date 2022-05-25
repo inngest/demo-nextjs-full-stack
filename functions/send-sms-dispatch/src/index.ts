@@ -15,8 +15,8 @@ export async function run({ event }: Args) {
   try {
     const res = await twilioClient.messages.create({
       messagingServiceSid,
-      // to: phone,
-      to: "+1 (845) 558-1054", // Hardcode for demo purposes
+      to: phone,
+      // to: "+1 (123) 555-1234", // Hardcode for demo purposes
       body: message,
     })
 
