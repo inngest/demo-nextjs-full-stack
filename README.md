@@ -1,5 +1,9 @@
 # Demo Inngest + Next.js
 
+👋 _**Have a question or suggestion? [Join our Discord](https://www.inngest.com/discord)!**_
+
+## Start the app
+
 Start the Next.js app in dev mode and the [Inngest dev server](https://github.com/inngest/inngest-cli):
 
 ```
