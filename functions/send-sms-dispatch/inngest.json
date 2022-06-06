@@ -14,7 +14,7 @@
   "steps": {
     "send-sms-dispatch": {
       "id": "send-sms-dispatch",
-      "path": "",
+      "path": "file://.",
       "name": "Send SMS Dispatch",
       "runtime": {
         "type": "docker"

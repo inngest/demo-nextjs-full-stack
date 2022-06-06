@@ -11,16 +11,21 @@ yarn dev
 ```
 
 ```
-inngest dev -p 9000
+inngest dev
 ```
 
 ## Environment variables
 
-Check out `.env.example` an `.env.local.example` for direction for your own `.env` files. See [the Next.js docs](https://nextjs.org/docs/basic-features/environment-variables) for more information.
+Check out `.env.example` for direction for your own `.env` files. See [the Next.js docs](https://nextjs.org/docs/basic-features/environment-variables) for more information.
+
+To set environment variables for any Inngest functions prefix them (e.g. `TWILIO_AUTH_TOKEN=123... inngest dev`) or set them via `export`.
 
 ## The app
 
-The demo app is a basic Next.js form view which when submitted, sends event(s) in batch to Inngest and runs the "Send SMS Dispatch" function.
+The demo app is a basic Next.js form view which when submitted, sends event(s) in batch to Inngest and runs the "Send SMS Dispatch" function. For reference, these are direct links to the code:
+
+- [`dispatch.js`](./pages/api/dispatch.js) - Sending an event to Inngest and Inngest DevServer during development via a Next.js API endpoints (the form receiver).
+- [`index.ts`](./functions/send-sms-dispatch/src/index.ts) - Handling the event and sending an SMS via the Twilio API.
 
 ![Inngest Demo App](./screenshot.png)
 

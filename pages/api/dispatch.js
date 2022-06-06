@@ -24,9 +24,12 @@ export default async function handler(req, res) {
     },
   }))
 
-  const inngest = new Inngest(process.env.INNGEST_KEY, {
-    inngestApiUrl: process.env.INNGEST_API_URL,
-  })
+  const options = {}
+  if (process.env.NODE_ENV === "development") {
+    options.inngestApiUrl = "http://localhost:9999/e/"
+  }
+
+  const inngest = new Inngest(process.env.INNGEST_KEY, options)
   await inngest.send(events)
 
   res.redirect(
