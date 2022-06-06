@@ -12,7 +12,8 @@
     }
   ],
   "steps": {
-    "Send SMS Dispatch": {
+    "send-sms-dispatch": {
+      "id": "send-sms-dispatch",
       "path": "",
       "name": "Send SMS Dispatch",
       "runtime": {
