@@ -17,6 +17,6 @@
     "ts-node": "10.7.0"
   },
   "dependencies": {
-    "twilio": "^3.77.1"
+    "twilio": "^4.14.0"
   }
 }
